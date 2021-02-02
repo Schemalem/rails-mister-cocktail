@@ -13,6 +13,31 @@
   </head>
 
   <body>
+    <div class="bs-example">
+      <nav class="navbar-expand-md navbar-main">
+        <div class="logo">
+          <%= link_to cocktails_path, class: "navbar-brand" do %>
+            <%= image_tag "https://static.thenounproject.com/png/1720497-200.png" %>
+          <% end %>
+          <%= link_to "Home", cocktails_path, class: "navbar-brand" %>
+        </div>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-search" id="navbarCollapse">
+          <form class="form-inline ml-auto">
+            <input type="text" class="form-control mr-sm-2" placeholder="Lookup a Cocktail">
+            <button type="submit" class="btn btn-outline-light">Search</button>
+          </form>
+        </div>
+        <div class="navbar-add-new">
+          <%= link_to "Add a new cocktail", new_cocktail_path, class:"btn btn-info"%>
+        </div>
+      </nav>
+    </div>
+
+
     <%= yield %>
   </body>
 </html>

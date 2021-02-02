@@ -2,3 +2,21 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+// display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+  h1 {
+    color: white;
+  }
+
+  h3 {
+    color: #e1e8f2;
+    font-weight: lighter;
+  }
+}
