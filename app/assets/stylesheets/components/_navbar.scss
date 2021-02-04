@@ -1,17 +1,23 @@
+@import "button";
+
 .navbar-main {
   background: $gray;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   padding: 8px 24px;
-
+  text-align: center;
+   a {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+  }
 }
 
 .navbar-main .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-main .navbar-brand img {
+.navbar-main .navbar-logo img {
   width: 40px;
 }
 
@@ -21,4 +27,8 @@
 
 #navbarCollapse {
   justify-content: right;
+}
+
+#search-cocktails {
+  font-family: 'Josefin Sans', sans-serif;
 }
