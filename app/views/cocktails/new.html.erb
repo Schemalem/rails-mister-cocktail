@@ -1,6 +1,14 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
-<%= link_to "Back", cocktails_path, class:"btn btn-info"%>
+<div class="container new-main">
+  <h3> ADD A NEW COCKTAIL </h3>
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class:"btn btn-add-new" %>
+  <% end %>
+  <%= link_to cocktails_path, class:"btn btn-search" do%>
+  <i class="fas fa-arrow-circle-left"></i><span> Back</span>
+  <% end %>
+</div>
 
+<!-- # make container full screen, add icon to button - use do and end, change font across whole app - use fonts css -->
+<!-- navbar right and left, center text vertical axis, pushing looks weird heroku -->

@@ -5,22 +5,23 @@
     <div class="b-text container text-center">
       <h1>COCKTAIL HQ</h1>
       <h3>SHAKEN OR STIRRED? HAVE IT YOUR WAY</h3>
-      <h2><%= link_to "Add a new cocktail", new_cocktail_path, class:"btn btn-add-new"%></h2>
+      <h2><%= link_to new_cocktail_path, class:"btn btn-add-new" do%>
+        <i class="fas fa-plus-circle"><p>Add A New Cocktail</p> </i>
+      <% end %>
+      </h2>
     </div>
   </div>
 </div>
 <div class="cocktail-list">
   <h3>GRAB A STOOL. BROWSE THE HQ BAR</h3>
-  <ul>
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <div class="card-cocktail">
-          <img src="https://images.pexels.com/photos/616836/pexels-photo-616836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+          <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-info">
             <h3> <%= link_to cocktail.name, cocktail_path(cocktail)%> </h3>
           </div>
         </div>
       <% end %>
     </div>
-  </ul>
 </div>
