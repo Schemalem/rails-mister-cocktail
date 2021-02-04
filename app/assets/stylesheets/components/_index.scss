@@ -3,20 +3,36 @@
 @import "avatar";
 @import "navbar";
 
+  h1 {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  h3 {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
 .banner {
   background-size: cover;
   background-position: center;
   height: 400px;
 // display: flex;
 //   justify-content: center;
-//   align-items: center;
+
+}
+
+.b-text{
+  text-align: center;
+  padding: 130px 0px;
 
   h1 {
     color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20;
   }
 
   h3 {
     color: #e1e8f2;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: lighter;
   }
 }
