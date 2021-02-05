@@ -1,0 +1,29 @@
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2c2b2b;
+  position: sticky;
+  bottom: 0;
+  h2 {
+    color: white;
+  }
+}
+
+.list-inline {
+  list-style: none;
+  padding: 0px;
+}
+
+.list-inline li {
+  display: inline-block;
+}
+
+.socials {
+  font-size: 32px;
+  color: #91bcb9;
+  margin: 8px 24px;
+
+  &:hover {
+    color: #C99DA3;
+  }
+}

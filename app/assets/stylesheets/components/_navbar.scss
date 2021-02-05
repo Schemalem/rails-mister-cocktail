@@ -1,5 +1,9 @@
 @import "button";
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .navbar-main {
   background: $gray;
   display: flex;
@@ -10,7 +14,7 @@
   align-items: center;
    a {
     color: white;
-    font-family: 'Josefin Sans';
+    font-family: 'Raleway', sans-serif;
   }
 }
 
@@ -31,5 +35,5 @@
 }
 
 #search-cocktails {
-  font-family: 'Josefin Sans';
+  font-family: 'Raleway', sans-serif;
 }

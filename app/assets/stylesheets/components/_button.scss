@@ -1,19 +1,28 @@
 .btn-add-new {
   background-color: $aqua;
   color: $white;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   padding: 8px 24px;
-  transition: background 1s;
+  transition: background 0.4s;
   line-height: 1px;
+
+  &:hover{
+    background-color: $pink;
+    color: $white;
+  }
 }
 
-.btn-search {
+.btn-second {
   background-color: #91bcb9;
   color: $white;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   padding: 8px 24px;
-  transition: background 1s;
+  transition: background 0.4s;
   line-height: 1px;
+
+  &:hover{
+    background-color: $pink;
+  }
 }

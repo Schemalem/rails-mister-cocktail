@@ -11,8 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
-  </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,600;0,900;1,100&display=swap" rel="stylesheet">
+ </head>
 
   <body>
     <div>
@@ -27,19 +28,41 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-search" id="navbarCollapse">
+        <!-- <div class="navbar-search" id="navbarCollapse">
           <form class="form-inline ml-auto" id="search-cocktails">
             <input type="text" class="form-control mr-sm-2" placeholder="Lookup a Cocktail">
             <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
           </form>
-        </div>
+        </div> -->
         <div class="navbar-add-new">
-          <%= link_to "Add a new cocktail", new_cocktail_path, class:"btn btn-add-new"%>
-        </div>
+          <%= link_to new_cocktail_path, class:"btn btn-add-new" do%>
+            <i class="fas fa-plus-circle"></i><span> Add A New Cocktail</span>
+          <% end %>
+       </div>
       </nav>
     </div>
 
 
     <%= yield %>
+
+    <div class="footer">
+        <ul class="list-inline">
+          <li>
+            <a href="https://www.lewagon.com" target="_blank" class="socials">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/nicoleschembri/" target="_blank" class="socials">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/schemalem/" target="_blank" class="socials">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
   </body>
 </html>
