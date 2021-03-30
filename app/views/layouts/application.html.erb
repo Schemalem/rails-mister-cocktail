@@ -16,34 +16,13 @@
  </head>
 
   <body>
-    <div>
-      <nav class="navbar-main">
-        <div class="logo">
-          <%= link_to cocktails_path, class: "navbar-logo" do %>
-            <%= image_tag "https://static.thenounproject.com/png/1720497-200.png" %>
-          <% end %>
-          <%= link_to "HOME", cocktails_path, class: "navbar-logo" %>
-        </div>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- <div class="navbar-search" id="navbarCollapse">
-          <form class="form-inline ml-auto" id="search-cocktails">
-            <input type="text" class="form-control mr-sm-2" placeholder="Lookup a Cocktail">
-            <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
-          </form>
-        </div> -->
-        <div class="navbar-add-new">
-          <%= link_to new_cocktail_path, class:"btn btn-add-new" do%>
-            <i class="fas fa-plus-circle"></i><span> Add A New Cocktail</span>
-          <% end %>
-       </div>
-      </nav>
+    <%= render 'shared/navbar' %>
+    <div class="d-flex flex-column min-height">
+      <%#= render 'shared/flashes' %>
+      <article class="flex-grow-1">
+        <%= yield %>
+      </article>
     </div>
-
-
-    <%= yield %>
 
     <div class="footer">
         <ul class="list-inline">
