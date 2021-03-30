@@ -2,7 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-12 vh-100">
       <h2><%= @cocktail.name %></h2>
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag "no-cocktail.png", alt: "A cocktail", class: "mb-3 rounded cocktail-img" %>
+      <% end %>
+
       <ul>
         <% @cocktail.doses.each do |dose| %>
           <%= dose.description %> of <%= dose.ingredient.name %>
@@ -12,7 +17,16 @@
       <%= link_to new_cocktail_dose_path(@cocktail), class:"btn btn-add-new " do %>
         <i class="fas fa-plus-circle"></i><span> Add Ingredient</span>
       <% end %>
+
+      <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+          <%= f.input :description, placeholder: "e.g. 25ml" %>
+          <%= f.association :ingredient %>
+          <%= f.submit "Submit to Cocktail", class: "btn btn-primary" %>
+      <% end %>
+
       <%= link_to "Back", cocktails_path, class:"btn btn-second"%>
     </div>
   </div>
+
+
 </div>

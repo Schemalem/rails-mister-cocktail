@@ -15,3 +15,41 @@ Ingredient.create(name: "vodka")
 Ingredient.create(name: "soda")
 Ingredient.create(name: "coke")
 Ingredient.create(name: "lemonade")
+
+
+p "Deleting all doses"
+Dose.destroy_all
+
+p "Deleting all ingredients"
+Ingredient.destroy_all
+
+ingredient_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+ingredients = JSON.parse(URI.open(ingredient_url).read)
+
+ingredients.flatten[1].each do |array|
+  ingredient = array.values.first
+  p "Adding #{ingredient} to db"
+  Ingredient.create(name: ingredient)
+end
+
+p "Deleting all cocktails"
+Cocktail.destroy_all
+
+10.times do
+  cocktail_name = Faker::Hipster.sentence(word_count: 2, supplemental: false, random_words_to_add: 0)
+  p "Adding #{cocktail_name} to db"
+  Cocktail.create(
+    name: cocktail_name
+  )
+end
+
+p "Creating doses"
+
+Cocktail.all.each do |cocktail|
+  num_of_ingredients = rand(2..4)
+  ingredients = Ingredient.all.sample(num_of_ingredients)
+  ingredients.each do |ingredient|
+    description = "#{["25ml", "50ml", "dash of", "shot of", "cup of"].sample}"
+    cocktail.doses.create(description: description, ingredient: ingredient)
+  end
+end
