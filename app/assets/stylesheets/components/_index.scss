@@ -8,14 +8,16 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 400px;
-// display: flex;
-//   justify-content: center;
+  height: 550px;
+  display: flex;
+  align-items: center;
+
 }
 
 .b-text{
   text-align: center;
   padding: 130px 0px;
+
 
   h1 {
     color: white;
