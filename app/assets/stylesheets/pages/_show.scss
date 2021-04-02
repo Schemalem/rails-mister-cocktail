@@ -1,0 +1,135 @@
+/* ----- Global ----- */
+* {
+  box-sizing: border-box;
+}
+
+.show-main {
+  display: grid;
+  grid-template-rows: 1fr;
+  font-family: "Raleway", sans-serif;
+  background-color: $aqua;
+  min-height: 85vh;
+
+  h3 {
+  font-size: 0.7em;
+  letter-spacing: 1.2px;
+  }
+
+  h4 {
+  font-size: 0.9em;
+  letter-spacing: 1.2px;
+  }
+
+  img {
+    max-width: 100%;
+    filter: drop-shadow(1px 1px 3px);
+    }
+
+  i {
+    color: $light-blue;
+  }
+}
+
+
+/* ----- Product Section ----- */
+.product {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  margin: auto;
+  padding: 2.5em 0;
+  min-width: 600px;
+  background-color: $light-blue;
+}
+
+/* ----- Photo Section ----- */
+.product__photo {
+  position: relative;
+}
+
+.photo-container {
+  position: absolute;
+  left: -2.5em;
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-main {
+  border-radius: 6px 6px 0 0;
+  background-color: $pink;
+  min-height: 400px;
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em;
+    color: #fff;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: -3.5em;
+    top: 4em;
+    max-width: 110%;
+    filter: saturate(105%) contrast(105%) hue-rotate(10deg)
+    drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* ----- Informations Section ----- */
+.product__info {
+  padding: 0.8em 0;
+  margin: 10px 20px;
+}
+
+.title {
+  h1 {
+    margin-bottom: 0.1em;
+    font-size: 2em;
+    // font-weight: 900;
+  }
+
+  span {
+    font-size: 0.7em;
+  }
+}
+
+
+.description {
+  clear: left;
+  margin: 2em 0;
+
+  h3 {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    font-size: 0.8em;
+    list-style: disc;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  i {
+    color: $pink;
+    transition: all 500ms;
+
+    &:hover {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+  .label {
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+  }

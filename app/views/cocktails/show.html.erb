@@ -1,32 +1,47 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 vh-100">
-      <h2><%= @cocktail.name %></h2>
-      <% if @cocktail.photo.attached? %>
-        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <%= image_tag "no-cocktail.png", alt: "A cocktail", class: "mb-3 rounded cocktail-img" %>
-      <% end %>
-
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <%= dose.description %> of <%= dose.ingredient.name %>
-          <%= link_to "Remove", dose_path(dose), method: :delete, remote: false%>
-        <% end %>
-      </ul>
-      <%= link_to new_cocktail_dose_path(@cocktail), class:"btn btn-add-new " do %>
-        <i class="fas fa-plus-circle"></i><span> Add Ingredient</span>
-      <% end %>
-
-      <%= simple_form_for [ @cocktail, @dose ] do |f| %>
-          <%= f.input :description, placeholder: "e.g. 25ml" %>
-          <%= f.association :ingredient %>
-          <%= f.submit "Submit to Cocktail", class: "btn btn-primary" %>
-      <% end %>
-
-      <%= link_to "Back", cocktails_path, class:"btn btn-second"%>
+ <div class="show-main">
+  <section class="product">
+    <div class="product__photo">
+      <div class="photo-container">
+        <div class="photo-main">
+          <div class="controls">
+            <%= link_to cocktails_path do%>
+              <i class="fas fa-arrow-circle-left"></i>
+            <% end %>
+          </div>
+            <% if @cocktail.photo.attached? %>
+              <%= cl_image_tag @cocktail.photo.key, crop: :fill, class: "show-img" %>
+            <% else %>
+              <%= image_tag "no-cocktail.jpeg", alt: "A cocktail", class: "mb-3 rounded show-img" %>
+            <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="product__info">
+      <div class="title">
+        <h1><%= @cocktail.name.upcase %></h1>
+      </div>
+      <div class="description">
+        <h4>INGREDIENTS</h4>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li> <%= dose.description %> of <%= dose.ingredient.name %>
+              <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure you want to remove this ingredient?' } do%>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
 
-
+      <div class="description">
+        <h4> ADD AN INGREDIENT </h4>
+        <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+          <%= f.input :description, placeholder: "e.g. 25ml", class: "qs" %>
+          <%= f.association :ingredient %>
+          <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
 </div>
+
