@@ -5,6 +5,7 @@
 @import "cards";
 @import "footer";
 @import "navbar";
+@import "new-cards";
 
 .banner {
   background-size: cover;
@@ -44,7 +45,7 @@
   background-size: cover;
   background-color: #eaf2f1;
   padding: 10px;
-  height: 1000px;
+
    h3 {
     font-family: 'Raleway', sans-serif;
     margin: 0px;
