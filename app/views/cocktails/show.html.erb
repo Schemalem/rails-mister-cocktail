@@ -34,7 +34,7 @@
       </div>
 
       <div class="description">
-        <h4> ADD AN INGREDIENT </h4>
+        <h4> ADD AN INGREDIENT</h4>
         <%= simple_form_for [ @cocktail, @dose ] do |f| %>
           <%= f.input :description, placeholder: "e.g. 25ml", class: "qs" %>
           <%= f.association :ingredient %>
