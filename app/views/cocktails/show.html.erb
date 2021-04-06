@@ -11,7 +11,7 @@
             <% if @cocktail.photo.attached? %>
               <%= cl_image_tag @cocktail.photo.key, crop: :fill, class: "show-img" %>
             <% else %>
-              <%= image_tag "no-cocktail.jpeg", alt: "A cocktail", class: "mb-3 rounded show-img" %>
+              <%= image_tag "https://images.pexels.com/photos/6240974/pexels-photo-6240974.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt: "A cocktail", class: "mb-3 rounded show-img" %>
             <% end %>
         </div>
       </div>
