@@ -11,23 +11,39 @@
 
 <div class="cocktail-list">
   <h3>GRAB A STOOL. BROWSE THE HQ BAR</h3>
+
+
     <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>
 
-          <div class="card-cocktail">
-            <% if cocktail.photo.attached? %>
-              <%= cl_image_tag cocktail.photo.key, height: 400, width: 400, crop: :fill %>
-            <% else %>
-              <%= image_tag "https://images.pexels.com/photos/6240974/pexels-photo-6240974.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", height: 300, width: 400, crop: :fill, alt: "A cocktail"%>
-            <% end %>
-            <%#= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-info">
-              <h3> <%= cocktail.name %></h3>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <% if cocktail.photo.attached? %>
+                  <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+                  <h3> <%= cocktail.name %></h3>
+                  </div>
+                <% else %>
+                <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6240974/pexels-photo-6240974.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+                  <%#= image_tag "https://images.pexels.com/photos/6240974/pexels-photo-6240974.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", height: 300, width: 300, crop: :fill, alt: "A cocktail"%>
+                   <h3> <%= cocktail.name %></h3>
+                </div>
+                <% end %>
+              <%#= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+              <div class="flip-card-back">
+                <h2> <%= cocktail.name %></h2>
+                <h4>ingredients</h4>
+                <ul>
+                  <% cocktail.doses.each do |dose| %>
+                    <li> <%= dose.ingredient.name %> </li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div>
 
         <% end %>
       <% end %>
     </div>
+
 </div>
