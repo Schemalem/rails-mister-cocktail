@@ -5,23 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "lime")
-Ingredient.create(name: "light rum")
-Ingredient.create(name: "gin")
-Ingredient.create(name: "vodka")
-Ingredient.create(name: "soda")
-Ingredient.create(name: "coke")
-Ingredient.create(name: "lemonade")
-
 
 p "Deleting all doses"
 Dose.destroy_all
 
 p "Deleting all ingredients"
 Ingredient.destroy_all
+
+Ingredient.create(name: "ice")
+Ingredient.create(name: "egg white")
 
 ingredient_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(URI.open(ingredient_url).read)
@@ -32,16 +24,16 @@ ingredients.flatten[1].each do |array|
   Ingredient.create(name: ingredient)
 end
 
-p "Deleting all cocktails"
-Cocktail.destroy_all
+# p "Deleting all cocktails"
+# Cocktail.destroy_all
 
-2.times do
-  cocktail_name = Faker::Hipster.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).downcase
-  p "Adding #{cocktail_name} to db"
-  Cocktail.create(
-    name: cocktail_name
-  )
-end
+# 1.times do
+#   cocktail_name = Faker::Hipster.sentence(word_count: 2, supplemental: false, random_words_to_add: 0).downcase
+#   p "Adding #{cocktail_name} to db"
+#   Cocktail.create(
+#     name: cocktail_name
+#   )
+# end
 
 p "Creating doses"
 
