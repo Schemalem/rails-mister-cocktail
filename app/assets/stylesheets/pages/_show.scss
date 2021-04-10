@@ -21,7 +21,9 @@
   }
 
   img {
-    max-width: 100%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
     filter: drop-shadow(1px 1px 3px);
   }
 
@@ -38,7 +40,7 @@
 /* ----- Product Section ----- */
 .product {
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
   padding: 2.5em 0;
   min-width: 600px;
@@ -64,7 +66,8 @@
 .photo-main {
   border-radius: 6px 6px 0 0;
   background-color: $aqua;
-  min-height: 400px;
+  min-height: 435px;
+  min-width: 330px;
 
   .controls {
     display: flex;
@@ -81,8 +84,8 @@
     position: absolute;
     left: -3.5em;
     // top: 4em;
-    max-width: 105%;
-    max-height: 420px;
+    // max-width: 105%;
+    // max-height: 420px;
     filter: saturate(105%) contrast(105%) hue-rotate(10deg)
     drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
   }
