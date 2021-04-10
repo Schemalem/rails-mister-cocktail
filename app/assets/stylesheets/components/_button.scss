@@ -27,3 +27,19 @@
     color: $white !important;
   }
 }
+
+.btn-search {
+  background-color: $pink;
+  color: $white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  transition: background 0.4s;
+  height: 34px;
+  margin-top: 2px;
+
+  &:hover{
+    background-color: $aqua;
+    color: $white !important;
+  }
+}
+

@@ -6,6 +6,19 @@
       <h1>COCKTAIL HQ</h1>
       <h3>SHAKEN OR STIRRED? HAVE IT YOUR WAY</h3>
     </div>
+    <!-- Search form -->
+    <%= form_tag cocktails_path, class: "search", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a cocktail"
+      %>
+      <%= button_tag type: 'submit', class: "btn btn-search" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <%#= submit_tag "Search", class: "btn btn-second" %>
+    <% end %>
+
   </div>
 </div>
 

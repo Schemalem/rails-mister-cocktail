@@ -13,6 +13,8 @@
   height: 550px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
 
 }
 
@@ -53,4 +55,12 @@
   }
 }
 
+.search {
+  display: flex;
 
+
+  input {
+    margin: 2px;
+    font-family: 'Raleway', sans-serif;
+  }
+}
