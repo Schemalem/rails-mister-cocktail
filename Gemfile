@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+gem 'simple_form_fancy_uploads'
+gem 'carrierwave', '~> 2.0'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

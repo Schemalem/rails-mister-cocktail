@@ -1,14 +1,23 @@
-<div class="container new-main">
-  <h3> ADD A NEW COCKTAIL </h3>
-  <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-add-new" %>
-  <% end %>
-  <%= link_to cocktails_path, class:"btn btn-second" do%>
-  <i class="fas fa-arrow-circle-left"></i><span> Back</span>
-  <% end %>
-</div>
+<div class="new-main">
+  <h1> NEW COCKTAIL </h1>
+  <div class="new-form">
+    <div class="controls mb-3">
+      <%= link_to cocktails_path do%>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
 
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= button_tag type: 'submit', class: "btn btn-second" do %>
+        <i class="fas fa-cocktail"></i> Add
+      <% end %>
+
+    <% end %>
+    <%#= link_to cocktails_path, class:"btn btn-second" do%>
+    <!-- <i class="fas fa-arrow-circle-left"></i><span> Back</span> -->
+    <%# end %>
+  </div>
+</div>
 <!-- # make container full screen, add icon to button - use do and end, change font across whole app - use fonts css -->
-<!-- navbar right and left, center text vertical axis - change font to fix, pushing looks weird heroku -->

@@ -45,4 +45,12 @@ body {
   h3 {
     margin-top: 10px;
   }
+
+  a {
+    text-decoration: none !important;
+
+    &:hover {
+      color: $aqua;
+    }
+  }
 }

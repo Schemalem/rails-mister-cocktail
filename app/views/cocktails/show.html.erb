@@ -38,7 +38,9 @@
         <%= simple_form_for [ @cocktail, @dose ] do |f| %>
           <%= f.input :description, placeholder: "e.g. 25ml", class: "qs" %>
           <%= f.association :ingredient %>
-          <%= f.submit "Add", class: "btn btn-second" %>
+          <%= button_tag type: 'submit', class: "btn btn-second" do %>
+            <i class="fas fa-cocktail"></i> Add
+          <% end %>
         <% end %>
       </div>
     </div>

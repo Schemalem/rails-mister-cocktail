@@ -9,7 +9,7 @@
 
   &:hover{
     background-color: $pink;
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -24,5 +24,6 @@
 
   &:hover{
     background-color: $pink;
+    color: $white !important;
   }
 }

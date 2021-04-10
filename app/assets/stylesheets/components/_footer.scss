@@ -8,6 +8,12 @@
     color: white;
   }
   font-family: 'Raleway';
+
+  a {
+    &:hover {
+      color: $pink;
+    }
+  }
 }
 
 // .list-inline {
