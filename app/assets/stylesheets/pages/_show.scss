@@ -7,12 +7,13 @@
   display: grid;
   grid-template-rows: 1fr;
   font-family: "Raleway", sans-serif;
-  background-color: $aqua;
+  background-color: $light-blue;
   min-height: 85vh;
 
   h1 {
     letter-spacing: 1.2px;
     font-size: xx-large;
+    color: $white;
   }
 
   // h3 {
@@ -47,7 +48,7 @@
   margin: auto;
   padding: 2.5em 0;
   min-width: 600px;
-  background-color: $light-blue;
+  background-color: $pink;
 }
 
 /* ----- Photo Section ----- */
@@ -68,7 +69,7 @@
 
 .photo-main {
   border-radius: 6px 6px 0 0;
-  background-color: $pink;
+  background-color: $aqua;
   min-height: 400px;
 
   .controls {
@@ -85,7 +86,7 @@
   img {
     position: absolute;
     left: -3.5em;
-    top: 4em;
+    // top: 4em;
     max-width: 110%;
     filter: saturate(105%) contrast(105%) hue-rotate(10deg)
     drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
@@ -122,6 +123,7 @@
   ul {
     font-size: 0.8em;
     list-style: disc;
+    color: $white;
   }
 
   li {
@@ -129,7 +131,7 @@
   }
 
   i {
-    color: $pink;
+    color: $light-blue;
     transition: all 500ms;
 
     &:hover {
@@ -139,7 +141,7 @@
 
   label {
     font-weight: normal;
-    color: $pink;
+    color: $white;
     letter-spacing: 1.2px;
     font-size: smaller;
   }
